@@ -42,53 +42,14 @@
   text-align: center;
 }
 
-#curriculum{
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #f0932b;
-  border-radius: 12px;
-}
-
-.container {
-  height: 50px;
-  margin-top: 13px;
-}
-
-.chevron {
-  width: 20px;
-  height: 3px;
-  opacity: 0;
-  transform: scale3d(0.5, 0.5, 0.5);
-  animation: move 3s ease-out infinite;
-}
-
-.chevron:first-child {
-  animation: move 3s ease-out 1s infinite;
-}
-
-.chevron:nth-child(2) {
-  animation: move 3s ease-out 2s infinite;
-}
-
-.chevron:before,
-.chevron:after {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 51%;
-  background: #fff;
-}
-
-.chevron:before {
-  left: 0;
-  transform: skew(0deg, 30deg);
-}
-
-.chevron:after {
-  right: 0;
-  width: 50%;
-  transform: skew(0deg, -30deg);
+.arrow {
+  border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    width: 30px;
+    height: 30px;
+    border-radius: 15%;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 @media only screen and (min-width : 360px)
@@ -113,6 +74,18 @@ and (min-height : 700px) {
     margin: 0;
     justify-content: center;
   }
+  #h1-home:hover{
+    transform: scale(1.6) perspective(0px);
+    text-shadow: 2px 2px 5px black;
+  }
+
+  .img-home{
+    transition: transform .2s; /* Animation */
+  }
+
+  .img-home:hover{
+    transform: scale(1.27);
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px)
@@ -124,14 +97,7 @@ and (min-height : 700px) {
   #h1-home {
     font-size: 35px;
   }
-  #curriculum{
-    padding: 20px;
-  }
-  .chevron {
-    width: 50px;
-    height: 8px;
-  }
-  .container {
+  .arrow {
     margin-top: 53px;
   }
   .description {
@@ -150,26 +116,8 @@ and (min-height : 700px) {
   }
 }
 
-@keyframes move {
-  25% {
-    opacity: 1;
-
-  }
-  33% {
-    opacity: 1;
-    transform: translateY(30px);
-  }
-  67% {
-    opacity: 1;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+@keyframes bounce {
+  50% {
+    transform: translateY(20px) rotate(45deg);
   }
 }
-
-@keyframes pulse {
-  to {
-    opacity: 1;
-  }

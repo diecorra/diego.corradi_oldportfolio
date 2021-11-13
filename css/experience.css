@@ -62,8 +62,8 @@
     padding: 1.8rem;
   }
   .row:hover {
-    transform: scale(1.05) perspective(0px);
-    box-shadow: 0 10px 10px rgb(240, 147, 43,1);
+    transform: scale(1.01) perspective(0px);
+    box-shadow: 0 3px 3px rgb(255, 131, 0,1);
   }
   #title-experience,#projects{
     margin: 0 auto;
